@@ -1,0 +1,9 @@
+
+
+<input class="form-control my-2" placeholder="search" > <!--[(ngModel)]="searchText"-->
+<div id="main" class="p-2 products-container d-flex flex-wrap" >
+@for(product of Products ;track product.id){
+ <app-product [product]="product" ></app-product>
+}
+</div>    
+<!--<app-product [filterValue]="searchText" ></app-product>-->

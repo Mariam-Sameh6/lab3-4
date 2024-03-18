@@ -1,0 +1,21 @@
+#main{
+    width: 100%;
+    height: auto;
+    border: solid black 1px;
+    padding: 50px;
+}
+#logo{
+    width: 20%;
+    height: 10%;
+    margin: 5px 40%;
+}
+h2{
+    color:green;
+    margin: 5px 10%;
+}
+.hide{
+    display:none ;
+}
+.show{
+    display: block;
+}

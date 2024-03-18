@@ -1,0 +1,29 @@
+<div class="card ms-5 m-3" style="width: 18rem;" [ngStyle]="{ 'box-shadow': shadow }" [appHighligh]="product.quantity||0"><!--appHighligh the name of property(not directiv selector) in @input in directive-->
+    <img [src]= 'product.imgURL' class="card-img-top w-100 h-50 "> 
+    <div class="card-body">
+      <h3 class="card-title">{{product.name | titlecase }}</h3> 
+      @if(product.price > 13){
+        <h4 class="card-item ">price: {{product.price |currency }}</h4>
+        <h6 class="card-item text-warning lead"> {{product.quantity }} available</h6>
+        <h6 class="card-item text-info "> We offer an explicit discount of {{discount}} %</h6>
+        <h3 class=" text-warning">{{product.price * discount/100 }}</h3>
+      }
+      @else{
+        <h4 class="card-item ">price: {{product.price}}</h4>
+      }
+      @switch(product.quantity){
+        @case(0){
+          <p class="lead">Not available</p>
+        }
+        @case(1){
+          <p class="lead">last on in stock</p>
+        }
+        @case(2){
+          <p class="lead">only two in stock</p>
+        }
+
+      }
+     
+      <button href="#" class="btn btn-primary w-75 ms-5" [disabled]="product.quantity==0" (click)="addProduct($event, product)">Add to cart</button>
+    </div>
+  </div>
